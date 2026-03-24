@@ -1,0 +1,51 @@
+feedback_id,student_feedback,category,timestamp
+1,"The course content was excellent and very well organized. I learned a lot about NLP concepts.",Content Quality,2024-01-15
+2,"The assignments were too difficult and unclear. Need better instructions.",Assignment Difficulty,2024-01-16
+3,"Great instructor! Very responsive to questions and helpful during office hours.",Instructor,2024-01-17
+4,"The lectures were too fast and I couldn't keep up with the material.",Pace,2024-01-18
+5,"Overall good course but the projects need more time for completion.",General,2024-01-19
+6,"Amazing learning experience! The practical examples really helped me understand the theory.",Content Quality,2024-01-20
+7,"I'm struggling with the programming assignments. They require knowledge we haven't been taught.",Assignment Difficulty,2024-01-21
+8,"Professor is knowledgeable but doesn't explain things clearly enough.",Instructor,2024-01-22
+9,"Course materials are comprehensive and well-structured. Very helpful for self-study.",Content Quality,2024-01-23
+10,"The workload is overwhelming. Too much content in too little time.",Pace,2024-01-24
+11,"Best class I've taken this semester! The interactive sessions are fantastic.",General,2024-01-25
+12,"The textbook is outdated and doesn't align with the lectures.",Learning Resources,2024-01-26
+13,"I appreciate the quick feedback on assignments. It helps me learn from my mistakes.",Instructor,2024-01-27
+14,"The online resources provided are very useful for understanding complex topics.",Learning Resources,2024-01-28
+15,"Disappointed with the lack of practical applications. Too much theory.",Content Quality,2024-01-29
+16,"The instructor makes difficult concepts easy to understand. Great teaching style!",Instructor,2024-01-30
+17,"Not enough support for students who are new to programming.",Assignment Difficulty,2024-01-31
+18,"The course is okay, but could be more engaging.",General,2024-02-01
+19,"Excellent coverage of modern NLP techniques. Very up-to-date curriculum!",Content Quality,2024-02-02
+20,"I feel lost in this class. The prerequisites weren't clearly stated.",General,2024-02-03
+21,"The group project was a great learning experience. Collaborated well with peers.",Assignment Difficulty,2024-02-04
+22,"TAs are very helpful and responsive. They clarify doubts effectively.",Instructor,2024-02-05
+23,"The video lectures are monotonous and hard to follow.",Pace,2024-02-06
+24,"Love the hands-on approach! Really solidifies understanding.",Content Quality,2024-02-07
+25,"The grading criteria are vague and inconsistent.",Assignment Difficulty,2024-02-08
+26,"This course exceeded my expectations. Highly recommend it!",General,2024-02-09
+27,"Some topics are rushed and not covered in enough depth.",Pace,2024-02-10
+28,"The supplementary readings are excellent and very informative.",Learning Resources,2024-02-11
+29,"I don't feel prepared for the final exam. Need more practice problems.",General,2024-02-12
+30,"Outstanding course! The real-world examples make everything click.",Content Quality,2024-02-13
+31,"The instructor is always available for extra help. Truly dedicated!",Instructor,2024-02-14
+32,"Too much focus on math, not enough on implementation.",Content Quality,2024-02-15
+33,"The course website is well-designed and easy to navigate.",Learning Resources,2024-02-16
+34,"I'm bored in class. The lectures lack enthusiasm.",Pace,2024-02-17
+35,"The assignments are relevant and reinforce learning well.",Assignment Difficulty,2024-02-18
+36,"Poor communication from the instructor. Questions often go unanswered.",Instructor,2024-02-19
+37,"The course provides a strong foundation for advanced NLP topics.",Content Quality,2024-02-20
+38,"It's just okay. Nothing special, nothing terrible.",General,2024-02-21
+39,"The lecture slides are confusing and lack detail.",Learning Resources,2024-02-22
+40,"Fantastic instructor! Makes even the most complex topics seem simple.",Instructor,2024-02-23
+41,"The deadline extensions were much appreciated. Very understanding!",General,2024-02-24
+42,"I've learned nothing from this course. Waste of time.",Content Quality,2024-02-25
+43,"The practical demos are the highlight of this course.",Content Quality,2024-02-26
+44,"Need more office hours. Current timing doesn't work for everyone.",Instructor,2024-02-27
+45,"The course is too advanced for an introductory level.",Pace,2024-02-28
+46,"Great balance of theory and practice.",Content Quality,2024-02-29
+47,"Assignment instructions are clear but expectations are unrealistic.",Assignment Difficulty,2024-03-01
+48,"The instructor genuinely cares about student success.",Instructor,2024-03-02
+49,"The recommended readings are helpful but not essential.",Learning Resources,2024-03-03
+50,"This course has sparked my interest in NLP!",General,2024-03-04

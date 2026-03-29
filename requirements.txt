@@ -1,24 +1,24 @@
 # Student Feedback Sentiment Analysis Dashboard - Dependencies
 
 # Core Web Framework
-streamlit==1.31.0
+streamlit>=1.31.0
 
 # Sentiment Analysis Models
-textblob==0.17.1
-vaderSentiment==3.3.2
+textblob>=0.17.1
+vaderSentiment>=3.3.2
 
 # Data Processing
-pandas==2.1.4
-numpy==1.26.3
+pandas>=2.2.0
+numpy>=1.26.4
 
 # Visualization Libraries
-plotly==5.18.0
-wordcloud==1.9.3
-matplotlib==3.8.2
+plotly>=5.18.0
+wordcloud>=1.9.3
+matplotlib>=3.8.2
 
 # NLP Utilities
-nltk==3.8.1
+nltk>=3.8.1
 
 # Utilities
-python-dateutil==2.8.2
-pillow==10.2.0
+python-dateutil>=2.8.2
+pillow>=10.2.0

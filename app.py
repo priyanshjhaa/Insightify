@@ -39,50 +39,314 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for academic presentation
+# Custom CSS for modern, visually appealing UI
 st.markdown("""
     <style>
+    /* Import modern fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* Root variables for consistent theming - Beige & White Theme */
+    :root {
+        --primary-gradient: linear-gradient(135deg, #c9a86c 0%, #8b7355 100%);
+        --success-gradient: linear-gradient(135deg, #d4a574 0%, #c9a86c 100%);
+        --warning-gradient: linear-gradient(135deg, #e8d5b7 0%, #d4c4a8 100%);
+        --info-gradient: linear-gradient(135deg, #f5f0e6 0%, #ebe5d9 100%);
+        --card-bg: rgba(255, 255, 255, 0.98);
+        --card-shadow: 0 8px 32px 0 rgba(139, 115, 85, 0.12);
+        --text-primary: #3d342b;
+        --text-secondary: #6b5d52;
+        --beige-light: #f9f6f0;
+        --beige-medium: #e8dcc8;
+        --beige-dark: #c9a86c;
+        --brown-accent: #8b7355;
+    }
+
+    /* Main container styling */
+    .main {
+        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e6 100%);
+        padding: 0;
+    }
+
+    /* Header styling with gradient */
     .main-header {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #2c3e50;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem;
+        font-weight: 800;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         text-align: center;
-        padding-bottom: 1rem;
-        border-bottom: 3px solid #3498db;
-        margin-bottom: 2rem;
+        padding: 2rem 0 1.5rem 0;
+        margin-bottom: 1.5rem;
+        position: relative;
+        animation: fadeInDown 0.8s ease-out;
     }
+
+    .main-header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 4px;
+        background: var(--primary-gradient);
+        border-radius: 2px;
+    }
+
+    /* Sub-header styling */
     .sub-header {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #34495e;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        border-left: 5px solid #c9a86c;
+        animation: slideInLeft 0.6s ease-out;
     }
+
+    /* Metric card with glassmorphism */
     .metric-card {
-        background-color: #f8f9fa;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-left: 4px solid #3498db;
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: var(--card-shadow);
         margin-bottom: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+    }
+
+    /* Sentiment coloring */
     .sentiment-positive {
-        color: #2ecc71;
-        font-weight: bold;
+        color: #10b981;
+        font-weight: 700;
+        font-size: 1.1em;
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
     }
+
     .sentiment-negative {
-        color: #e74c3c;
-        font-weight: bold;
+        color: #ef4444;
+        font-weight: 700;
+        font-size: 1.1em;
+        text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
     }
+
     .sentiment-neutral {
-        color: #95a5a6;
-        font-weight: bold;
+        color: #6b7280;
+        font-weight: 700;
+        font-size: 1.1em;
     }
+
+    /* Info box with gradient border */
     .info-box {
-        background-color: #e8f4f8;
+        background: linear-gradient(135deg, rgba(249, 246, 240, 0.9) 0%, rgba(245, 240, 230, 0.9) 100%);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border-left: 5px solid #c9a86c;
+        margin: 1.5rem 0;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(139, 115, 85, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+        box-shadow: 0 8px 24px rgba(139, 115, 85, 0.15);
+        transform: translateX(5px);
+    }
+
+    /* Enhanced button styling */
+    .stButton > button {
+        background: var(--primary-gradient) !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 600 !important;
+        padding: 0.75rem 2rem !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 4px 16px rgba(139, 115, 85, 0.25) !important;
+        transition: all 0.3s ease !important;
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    .stButton > button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 24px rgba(139, 115, 85, 0.35) !important;
+    }
+
+    /* Input field styling */
+    .stTextArea > div > div > textarea {
+        border-radius: 0.75rem !important;
+        border: 2px solid #e8dcc8 !important;
+        background-color: white !important;
+        color: #3d342b !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .stTextArea > div > div > textarea:focus {
+        border-color: #c9a86c !important;
+        box-shadow: 0 0 0 3px rgba(201, 168, 108, 0.1) !important;
+    }
+
+    .stTextArea > div > div > textarea::placeholder {
+        color: #9a8b7a !important;
+    }
+
+    /* Metric styling */
+    [data-testid="stMetricValue"] {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    [data-testid="stMetricDelta"] {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+    }
+
+    /* Tab styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+        padding: 8px;
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        border-radius: 0.75rem;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: var(--primary-gradient) !important;
+        color: white !important;
+    }
+
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #faf8f3 0%, #f5f0e6 100%);
+    }
+
+    /* Footer styling */
+    footer {
+        background: var(--primary-gradient);
+        color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+        }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary-gradient);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #8b7355;
+    }
+
+    /* Success/Error/Warning messages */
+    .success-message {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+        border-left: 5px solid #10b981;
         padding: 1rem;
-        border-radius: 0.5rem;
-        border-left: 4px solid #3498db;
+        border-radius: 0.75rem;
         margin: 1rem 0;
+    }
+
+    .warning-message {
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+        border-left: 5px solid #f59e0b;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        margin: 1rem 0;
+    }
+
+    /* Data table styling */
+    [data-testid="stDataFrame"] {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Plotly chart styling */
+    .js-plotly-plot {
+        background: white !important;
+        border-radius: 1rem !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background: linear-gradient(135deg, rgba(201, 168, 108, 0.12) 0%, rgba(139, 115, 85, 0.12) 100%);
+        border-radius: 0.75rem;
+        font-weight: 600;
+        border: 1px solid rgba(201, 168, 108, 0.2);
+        color: #8b7355;
+    }
+
+    .streamlit-expanderContent {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1rem;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -109,11 +373,22 @@ def render_header():
     st.markdown('<div class="main-header">🎓 Student Feedback Sentiment Analysis Dashboard</div>',
                 unsafe_allow_html=True)
 
+    # Enhanced info box with icons and better styling
     st.markdown("""
-    <div class="info-box">
-    This dashboard analyzes student feedback using two NLP models:
-    <b>TextBlob</b> (lexicon-based) and <b>VADER</b> (optimized for social text).
-    Compare results, visualize distributions, and extract insights from feedback data.
+    <div class="info-box" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(201, 168, 108, 0.15), rgba(139, 115, 85, 0.15)); border-radius: 50%;"></div>
+        <div style="position: relative; z-index: 1;">
+            <h3 style="color: #8b7355; margin-bottom: 0.5rem; font-family: 'Poppins', sans-serif;">✨ Powerful NLP Analytics</h3>
+            <p style="color: #6b5d52; line-height: 1.6; margin-bottom: 0;">
+                This advanced dashboard analyzes student feedback using two state-of-the-art NLP models:
+                <br><br>
+                <span style="display: inline-block; background: linear-gradient(135deg, #c9a86c, #8b7355); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">🔵 TextBlob</span> — Lexicon-based sentiment analysis
+                <br>
+                <span style="display: inline-block; background: linear-gradient(135deg, #c9a86c, #8b7355); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">🟣 VADER</span> — Optimized for social media text
+                <br><br>
+                Compare results, visualize distributions, and extract actionable insights from your feedback data.
+            </p>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -124,10 +399,17 @@ def tab_single_analysis():
     """
     st.markdown('<div class="sub-header">📝 Single Text Analysis</div>', unsafe_allow_html=True)
 
-    # Text input area
+    # Text input area with enhanced styling
+    st.markdown("""
+    <div style="background: white; padding: 1.5rem; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(139, 115, 85, 0.08);">
+        <label style="font-weight: 600; color: #8b7355; margin-bottom: 0.5rem; display: block;">Enter student feedback to analyze:</label>
+    </div>
+    """, unsafe_allow_html=True)
+
     text_input = st.text_area(
-        "Enter student feedback to analyze:",
-        placeholder="Type or paste the feedback text here...",
+        "feedback_text",
+        label_visibility="collapsed",
+        placeholder="Type or paste the feedback text here... (3-5000 characters)",
         height=150,
         max_chars=5000,
         help="Enter any text between 3 and 5000 characters"
@@ -154,7 +436,7 @@ def tab_single_analysis():
             return
 
         # Analyze
-        with st.spinner("Analyzing sentiment..."):
+        with st.spinner("🔍 Analyzing sentiment..."):
             result = st.session_state.analyzer.analyze_single_text(text_input)
             st.session_state.single_result = result
 
@@ -164,50 +446,97 @@ def tab_single_analysis():
 
         st.markdown("---")
 
-        # Original text
-        st.subheader("📄 Original Text")
-        st.info(result['text'])
+        # Original text with better styling
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(249, 246, 240, 0.8), rgba(245, 240, 230, 0.8)); padding: 1.5rem; border-radius: 1rem; border-left: 5px solid #c9a86c;">
+            <h4 style="color: #8b7355; margin-bottom: 0.75rem;">📄 Original Text</h4>
+            <p style="color: #3d342b; line-height: 1.6; margin: 0;">
+        """, unsafe_allow_html=True)
 
-        # Side-by-side comparison
+        st.markdown(f"<span>{result['text']}</span></p></div>", unsafe_allow_html=True)
+
+        # Side-by-side comparison with enhanced cards
         st.markdown('<div class="sub-header">🔄 Model Comparison</div>', unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
 
         with col1:
-            st.markdown("### 🔵 TextBlob Model")
+            # TextBlob card
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, rgba(201, 168, 108, 0.12), rgba(139, 115, 85, 0.12)); padding: 1.5rem; border-radius: 1rem; border: 2px solid rgba(201, 168, 108, 0.25); backdrop-filter: blur(10px);">
+                <h3 style="color: #8b7355; margin-bottom: 1rem;">🔵 TextBlob Model</h3>
+            """, unsafe_allow_html=True)
 
             tb_data = result['textblob']
             sentiment_class = f"sentiment-{tb_data['sentiment'].lower()}"
 
             st.markdown(f"""
-            <p>Sentiment: <span class="{sentiment_class}">{get_sentiment_emoji(tb_data['sentiment'])} {tb_data['sentiment']}</span></p>
-            <p>Polarity: <b>{format_score(tb_data['polarity'])}</b></p>
-            <p>Subjectivity: <b>{format_score(tb_data['subjectivity'])}</b></p>
+                <div style="background: white; padding: 1rem; border-radius: 0.75rem; margin-top: 1rem;">
+                    <p style="margin: 0.5rem 0; color: #6b5d52;">Sentiment:</p>
+                    <p class="{sentiment_class}" style="font-size: 1.3rem; margin: 0.5rem 0;">
+                        {get_sentiment_emoji(tb_data['sentiment'])} {tb_data['sentiment']}
+                    </p>
+                    <hr style="border: none; border-top: 1px solid #e8dcc8; margin: 1rem 0;">
+                    <p style="margin: 0.5rem 0; color: #6b5d52;">
+                        <strong>Polarity:</strong> <span style="color: #c9a86c;">{format_score(tb_data['polarity'])}</span>
+                    </p>
+                    <p style="margin: 0.5rem 0; color: #6b5d52;">
+                        <strong>Subjectivity:</strong> <span style="color: #c9a86c;">{format_score(tb_data['subjectivity'])}</span>
+                    </p>
+                </div>
             """, unsafe_allow_html=True)
 
-            st.metric("Sentiment", tb_data['sentiment'])
+            st.metric("Overall Sentiment", tb_data['sentiment'],
+                     delta_color="normal" if tb_data['sentiment'] == "Positive" else "inverse" if tb_data['sentiment'] == "Negative" else "off")
+
+            st.markdown("</div>", unsafe_allow_html=True)
 
         with col2:
-            st.markdown("### 🟣 VADER Model")
+            # VADER card
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.12), rgba(201, 168, 108, 0.12)); padding: 1.5rem; border-radius: 1rem; border: 2px solid rgba(212, 165, 116, 0.25); backdrop-filter: blur(10px);">
+                <h3 style="color: #a68b6e; margin-bottom: 1rem;">🟣 VADER Model</h3>
+            """, unsafe_allow_html=True)
 
             vader_data = result['vader']
             sentiment_class = f"sentiment-{vader_data['sentiment'].lower()}"
 
             st.markdown(f"""
-            <p>Sentiment: <span class="{sentiment_class}">{get_sentiment_emoji(vader_data['sentiment'])} {vader_data['sentiment']}</span></p>
-            <p>Compound Score: <b>{format_score(vader_data['compound'])}</b></p>
-            <p>Positive: {format_score(vader_data['pos'])} | Negative: {format_score(vader_data['neg'])} | Neutral: {format_score(vader_data['neu'])}</p>
+                <div style="background: white; padding: 1rem; border-radius: 0.75rem; margin-top: 1rem;">
+                    <p style="margin: 0.5rem 0; color: #6b5d52;">Sentiment:</p>
+                    <p class="{sentiment_class}" style="font-size: 1.3rem; margin: 0.5rem 0;">
+                        {get_sentiment_emoji(vader_data['sentiment'])} {vader_data['sentiment']}
+                    </p>
+                    <hr style="border: none; border-top: 1px solid #e8dcc8; margin: 1rem 0;">
+                    <p style="margin: 0.5rem 0; color: #6b5d52;">
+                        <strong>Compound Score:</strong> <span style="color: #d4a574;">{format_score(vader_data['compound'])}</span>
+                    </p>
+                    <p style="margin: 0.5rem 0; color: #6b5d52; font-size: 0.9rem;">
+                        Positive: <span style="color: #10b981;">{format_score(vader_data['pos'])}</span> |
+                        Negative: <span style="color: #ef4444;">{format_score(vader_data['neg'])}</span> |
+                        Neutral: <span style="color: #6b7280;">{format_score(vader_data['neu'])}</span>
+                    </p>
+                </div>
             """, unsafe_allow_html=True)
 
-            st.metric("Sentiment", vader_data['sentiment'])
+            st.metric("Overall Sentiment", vader_data['sentiment'],
+                     delta_color="normal" if vader_data['sentiment'] == "Positive" else "inverse" if vader_data['sentiment'] == "Negative" else "off")
 
-        # Mini word cloud
+            st.markdown("</div>", unsafe_allow_html=True)
+
+        # Mini word cloud with enhanced container
         if len(result['text']) > 20:
             st.markdown("---")
-            st.markdown('<div class="sub-header">☁️ Word Cloud</div>', unsafe_allow_html=True)
+            st.markdown('<div class="sub-header">☁️ Word Cloud Visualization</div>', unsafe_allow_html=True)
+
+            st.markdown("""
+            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
+            """, unsafe_allow_html=True)
 
             wordcloud_fig = create_word_cloud([result['text']], width=1000, height=400)
             st.pyplot(wordcloud_fig)
+
+            st.markdown("</div>", unsafe_allow_html=True)
 
 
 def tab_bulk_analysis():
@@ -550,10 +879,19 @@ def main():
     # Footer
     st.markdown("---")
     st.markdown("""
-    <div style="text-align: center; color: #7f8c8d; padding: 1rem;">
-    <b>Student Feedback Sentiment Analysis Dashboard</b><br>
-    Built with Streamlit | TextBlob & VADER NLP Models<br>
-    <small>Analysis generated at {}</small>
+    <div style="background: linear-gradient(135deg, #c9a86c 0%, #8b7355 100%); color: white; padding: 2.5rem 2rem; border-radius: 1rem; margin-top: 3rem; text-align: center; box-shadow: 0 8px 32px rgba(139, 115, 85, 0.25);">
+        <h3 style="margin: 0 0 0.5rem 0; font-family: 'Poppins', sans-serif; font-size: 1.5rem;">Student Feedback Sentiment Analysis Dashboard</h3>
+        <p style="margin: 0.5rem 0; opacity: 0.95;">
+            Built with ❤️ using Streamlit | TextBlob & VADER NLP Models
+        </p>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.85; font-size: 0.9rem;">
+            Analysis generated at {}
+        </p>
+        <div style="margin-top: 1rem; opacity: 0.7;">
+            <span style="display: inline-block; margin: 0 0.5rem;">🎓</span>
+            <span style="display: inline-block; margin: 0 0.5rem;">📊</span>
+            <span style="display: inline-block; margin: 0 0.5rem;">🔍</span>
+        </div>
     </div>
     """.format(get_timestamp()), unsafe_allow_html=True)
 
